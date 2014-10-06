@@ -2145,8 +2145,8 @@ End Function
     u = (erfc(erfcinv) - y) / (-2.0 / Sqrt(3.1415926) * Exp(-erfcinv**2))
     erfcinv = erfcinv - u / (1.0 + erfcinv * u)
     
-	if(y==0.)      erfcinv ="¡Þ"
-    if(y==2.)      erfcinv ="-¡Þ"
+	if(y==0.)      erfcinv ="Â¡Ãž"
+    if(y==2.)      erfcinv ="-Â¡Ãž"
 	if(y<0.)       erfcinv = "NaN"
 	if(y>2.)       erfcinv = "NaN" 
 
