@@ -1,0 +1,68 @@
+#LINE1 :n_trait   continue/threshold     incidence(threshold) Uncommon_QTL(0/1)
+2  0  0.3E0 1
+#LINE2 :ra(12,13,23) 
+0.7E0 0.5E0 0.8E0 
+#LINE3 :re(12,13,23) 
+0.0E0 0.20E0 0.5E0
+#LINE4 :h2(1) h2(2) ... h2(ntrait)  
+0.1E0 0.3E0 0.5E0
+#LINE5 :n_marker, n_chr,marker_rule
+500  5 0
+#LINE6 :len_chr, rate_m, rate_q, 
+1.0E0  1.25E-3  2.5E-3  
+#LINE7 :qtl_rule, n_qtl, qtl_p1, qtl_p2
+0  300  0.42E0 1.66E0  
+#LINE8 : stage, sub_num, u_seed
+3  1      458042132
+#LINE9 :p_sire,p_dam, p_size, p_gen
+50  50  100  1000	
+#LINE10 :mut_rule,mate_rule,sele_rule
+0 0 0
+#p_sire,p_dam, p_size, p_gen
+500 500 1000 1	
+#mut_rule,mate_rule,sele_rule
+1 0 0
+#p_sire,p_dam, p_size, p_gen
+50 500 1000 4	
+#mut_rule,mate_rule,sele_rule
+1 0 0
+
+
+Line 1: integer/real
+       ntrait=the number of trait                      
+       ind_var=0 OR 1                                  0 : continue trait  1: threshold trait(only for first trait)
+       Tr= incidence for threshold trait
+       Uncommon_QTL=0/1	# Whether all QTL affect all traits  0: Yes  1: No(only for two traits having genetically correlation and the seeting range is: -0.88~0.88)   
+Line 2: real        
+	ra= genetic correlation 
+Line 3: real
+	re=residual correlation 
+Line 4: real 
+	h2= heritability for the trait
+Line 5:  integer
+	n_marker=number of markers per chromosome 
+	n_chr= number of chromosomes per animal
+	marker_rule=marker distribution rule		0: evenly space, 1: inverval with unin distribution
+Line 6:  real
+	len_chr= length of chromosome in Morgan
+	rate_m=mutation rate of marker
+	rate_q=mutation rate of qtl
+Line 7: integer(1), real
+	qtl_rule=qtl distribution rule		0:normal, 1:gamma(only for one trait and two trait with Uncommon_QTL=1)
+	n_qtl=qtl number		
+	qtl_p1= parameter 1 for qtl distr.  gamma:shape
+	qtl_p2= parameter 2 for qtl distr.  gamma:scale	
+Line 8:integer
+	stage = stages of simulation 
+	sub_num= number of subpop. 
+	u_seed= user defineded start seed
+Line 9: integer
+	p_sire= number of sire  
+	p_dam= number of dam 
+	p_gen= number of generation 
+Line 10: integer
+	mut_rule= muation rule		0: mutation 1: no mutation
+	mate_rule=mate rule		0: random mate,  1: random but avoide sib mate 
+	sele_rule=selection rule	0: random select 1:EBV selection 2: gEBV selection
+Line 11-12 parameters for population stage2
+Line 13-14 parameters for population stage3
